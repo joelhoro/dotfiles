@@ -1,0 +1,14 @@
+alias c='cursor'
+alias squash='git commit --amend --no-edit'
+alias resource='echo "Reloading bashrc" && source ~/.bashrc'
+alias sshdev='ssh ec2'
+alias ca='cursor-agent'
+alias gl='git lg'
+
+# GitHub shortcuts
+alias ghb='gh browse -b $(git branch --show-current)'  # Open current branch on GitHub
+alias ghpr='gh pr view --web'                          # Open PR for current branch
+alias ghprs='gh pr list --web'                         # Open all PRs for this repo
+alias ghc='gh browse -c'                               # Open recent commits
+alias ghlc='gh browse $(git rev-parse HEAD)'           # Open last commit on GitHub
+alias ghr='gh repo view --web'                         # Open repo home on GitHub

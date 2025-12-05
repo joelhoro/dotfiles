@@ -1,0 +1,7 @@
+[user]
+	name = Joel Horowitz
+	email = joelhoro@gmail.com
+
+
+[alias]
+    lg = "log -15 --pretty=format:'%C(yellow)%h%Creset %Cgreen(%ar)%Creset %C(cyan)%an%Creset %s' --abbrev-commit"

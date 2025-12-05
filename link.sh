@@ -46,6 +46,9 @@ echo ""
 # Link bashrc
 link_file "$DOTFILES_DIR/bashrc" "$HOME_DIR/.bashrc"
 
+# Link profile
+link_file "$DOTFILES_DIR/profile" "$HOME_DIR/.profile"
+
 # Link gitconfig
 link_file "$DOTFILES_DIR/gitconfig" "$HOME_DIR/.gitconfig"
 

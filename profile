@@ -81,3 +81,4 @@ if [ -n "$BASH_VERSION" ] && [[ $- == *i* ]]; then
     fi
     display_system_info  # Commented out - function available but won't auto-run
 fi
+. "$HOME/.cargo/env"

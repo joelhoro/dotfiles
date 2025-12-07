@@ -25,7 +25,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -169,3 +169,31 @@ display_system_info() {
         echo ""
     fi
 }
+
+# Setup fzf (fuzzy finder)
+# Key bindings:
+#   Ctrl+R - Search command history
+#   Ctrl+T - Search files and insert into command line
+#   Alt+C  - Change directory
+#   **     - Type ** and press Tab for fuzzy file completion
+if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
+    source /usr/share/doc/fzf/examples/key-bindings.bash
+fi
+
+# Setup fzf completion (enables ** trigger for Tab completion)
+if [ -f /usr/share/bash-completion/completions/fzf ]; then
+    source /usr/share/bash-completion/completions/fzf
+fi
+
+# Setup zoxide (smarter cd command)
+# Usage:
+#   z <query>     - Jump to a directory (fuzzy matching)
+#   zi <query>    - Interactive directory selection with fzf
+#   zz            - Jump to most recently used directory
+#   zi            - Interactive selection of recent directories
+#   zoxide query  - List all directories in database
+eval "$(zoxide init bash)"
+
+# Setup Rust/Cargo environment
+. "$HOME/.cargo/env"
+

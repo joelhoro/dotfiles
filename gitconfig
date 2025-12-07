@@ -5,3 +5,5 @@
 
 [alias]
     lg = "log -15 --pretty=format:'%C(yellow)%h%Creset %Cgreen(%ar)%Creset %C(cyan)%an%Creset %s' --abbrev-commit"
+[core]
+	excludesfile = /home/joel/.gitignore_global

@@ -8,6 +8,11 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# Configure SSH to use 1Password SSH agent
+if [ -S "$HOME/.1password/agent.sock" ]; then
+    export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+fi
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists

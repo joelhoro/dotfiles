@@ -2,8 +2,12 @@
 	name = Joel Horowitz
 	email = joelhoro@gmail.com
 
+[core]
 
 [alias]
     lg = "log -15 --pretty=format:'%C(yellow)%h%Creset %Cgreen(%ar)%Creset %C(cyan)%an%Creset %s' --abbrev-commit"
 [core]
 	excludesfile = /home/joel/.gitignore_global
+	sshCommand = ssh -o IdentityAgent=/home/joel/.1password/agent.sock
+[url "git@github.com:"]
+	insteadOf = https://github.com/

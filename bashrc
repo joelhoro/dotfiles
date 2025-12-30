@@ -117,6 +117,11 @@ if ! shopt -oq posix; then
 fi
 export PATH="$HOME/.local/bin:$PATH"
 
+# Configure SSH to use 1Password SSH agent
+if [ -S "$HOME/.1password/agent.sock" ]; then
+    export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+fi
+
 # Display system information function (available for manual use)
 display_system_info() {
     # Only display if this is an interactive shell
@@ -195,5 +200,8 @@ fi
 eval "$(zoxide init bash)"
 
 # Setup Rust/Cargo environment
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
+alias k9s="/snap/k9s/current/bin/k9s"
+
+. /etc/bash_completion

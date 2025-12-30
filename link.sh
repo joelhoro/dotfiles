@@ -57,6 +57,7 @@ link_file "$DOTFILES_DIR/aliases" "$HOME_DIR/.bash_aliases"
 
 # Link nvim config
 link_file "$DOTFILES_DIR/config/nvim/init.lua" "$HOME_DIR/.config/nvim/init.lua"
+link_file "$DOTFILES_DIR/config/nvim/lua" "$HOME_DIR/.config/nvim/lua"
 
 echo ""
 echo -e "${GREEN}Done!${NC} All dotfiles have been linked."

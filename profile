@@ -9,9 +9,10 @@
 #umask 022
 
 # Configure SSH to use 1Password SSH agent
-if [ -S "$HOME/.1password/agent.sock" ]; then
-    export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
-fi
+# Disabled - using standard SSH keys from ~/.ssh instead
+# if [ -S "$HOME/.1password/agent.sock" ]; then
+#     export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+# fi
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -86,4 +87,4 @@ if [ -n "$BASH_VERSION" ] && [[ $- == *i* ]]; then
     fi
     display_system_info  # Commented out - function available but won't auto-run
 fi
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"

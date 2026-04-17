@@ -118,9 +118,10 @@ fi
 export PATH="$HOME/.local/bin:$PATH"
 
 # Configure SSH to use 1Password SSH agent
-if [ -S "$HOME/.1password/agent.sock" ]; then
-    export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
-fi
+# Disabled - using standard SSH keys from ~/.ssh instead
+# if [ -S "$HOME/.1password/agent.sock" ]; then
+#     export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+# fi
 
 # Display system information function (available for manual use)
 display_system_info() {
@@ -205,3 +206,7 @@ eval "$(zoxide init bash)"
 alias k9s="/snap/k9s/current/bin/k9s"
 
 . /etc/bash_completion
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

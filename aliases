@@ -21,3 +21,29 @@ alias ghr='gh repo view --web'                         # Open repo home on GitHu
 
 alias godell='ssh dell'
 alias goasus='ssh asus'
+alias goresearcher='cd ~/dev/researcher'
+alias godebugger='cd ~/dev/debugger'
+alias ld=lazydocker
+
+alias ec2instance='aws ec2 describe-instances --filters "Name=tag:Name,Values=DevJun2025" --query "Reservations[].Instances[].InstanceId" --output text'
+alias ec2start='aws ec2 start-instances --instance-ids $(ec2instance)'
+alias ec2stop='aws ec2 stop-instances --instance-ids $(ec2instance)'
+
+avi_to_mp4() {
+    local input="$1"
+
+    if [[ -z "$input" ]]; then
+        echo "Usage: avi_to_mp4 file.avi"
+        return 1
+    fi
+
+    if [[ ! -f "$input" ]]; then
+        echo "File not found: $input"
+        return 1
+    fi
+
+    local output="${input%.avi}.mp4"
+
+    ffmpeg -i "$input" -c:v libx264 -c:a aac "$output"
+}
+

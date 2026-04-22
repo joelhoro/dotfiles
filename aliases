@@ -12,6 +12,8 @@ alias gl='git lg'
 alias o='xdg-open'
 
 # GitHub shortcuts
+alias gpf='git push --force'
+alias gra='git rebase origin/main --autostash'
 alias gb='gh browse -b $(git branch --show-current)'   # Open current repo on GitHub at current branch
 alias ghb='gh browse -b $(git branch --show-current)'  # Open current branch on GitHub
 alias ghpr='gh pr view --web'                          # Open PR for current branch
